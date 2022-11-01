@@ -37,9 +37,26 @@ const playGame = (computer, playerChoice) => {
       computerWins++
       return "Scissors beats paper :(";
     }
+  } else {
+    return 'Error try again'
   }
 };
 
-console.log(playGame(computer, playerChoice));
+const game = () => {
+  for(let i = 0; i< 5 ; i++){
+    const playerChoice = prompt('Choose between: Rock, Paper and Scissors').toLowerCase()
+    const computerSelection = computerChoice();
+    console.log(playGame(computerSelection, playerChoice));
+  }
+  if(playerWins < computerWins){
+    return 'You lost!'
+  } else if(playerWins > computerWins){
+   return 'You Won!'
+  } else {
+    return 'It was a draw!'
+  }
+}
+
+console.log(game());
 console.log(computerWins);
 console.log(playerWins)
