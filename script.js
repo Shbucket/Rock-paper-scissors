@@ -6,36 +6,40 @@ const computerChoice = () => {
 
 const computer = computerChoice();
 
-const playerChoice = "paper";
-const computerWins = 0;
-const playerWins = 0;
+const playerChoice = "scissors";
+let computerWins = 0;
+let playerWins = 0;
 
 const playGame = (computer, playerChoice) => {
   if (playerChoice == computer) {
     return "Its a Draw!";
   } else if (playerChoice == "rock") {
     if (computer == "paper") {
-      computerWins++;
+      computerWins++
       return "Paper beats Rock sorry :(";
     } else if (computer == "scissors") {
-      playerWins++;
+      playerWins++
       return "Rock beats scissors :)";
     }
   } else if (playerChoice == "scissors") {
     if (computer == "paper") {
+      playerWins++
       return "Scissors beats paper :)";
     } else if (computer == "rock") {
-      computerWins++;
+      computerWins++
       return "Rock beats scissors :(";
     }
   } else if (playerChoice == "paper") {
     if (computer == "rock") {
+      playerWins++
       return "Paper beats rock :)";
     } else if (computer == "scissors") {
-      computerWins++;
+      computerWins++
       return "Scissors beats paper :(";
     }
   }
 };
 
-/*console.log(playGame(computer, playerChoice));*/
+console.log(playGame(computer, playerChoice));
+console.log(computerWins);
+console.log(playerWins)
