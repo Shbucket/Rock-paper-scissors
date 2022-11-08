@@ -6,7 +6,7 @@ const computerChoice = () => {
 
 const computer = computerChoice();
 
-const playerChoice = "scissors";
+let playerChoice;
 let computerWins = 0;
 let playerWins = 0;
 const playGame = (computer, playerChoice) => {
@@ -41,24 +41,18 @@ const playGame = (computer, playerChoice) => {
   }
 };
 
-/*const game = () => {
-  for (let i = 0; i < 5; i++) {
-    const playerChoice = prompt(
-      "Choose between: Rock, Paper and Scissors"
-    ).toLowerCase();
-    const computerSelection = computerChoice();
-    console.log(playGame(computerSelection, playerChoice));
-  }
-  if (playerWins < computerWins) {
-    return "You lost!";
-  } else if (playerWins > computerWins) {
-    return "You Won!";
-  } else {
-    return "It was a draw!";
-  }
-};
-*/
+const paper = document.getElementById("paper");
+const rock = document.getElementById("rock");
+const scissors = document.getElementById("scissors");
 
+const handleClick = (e) => {
+  playerChoice = e.target.id
+};
+
+paper.addEventListener('click', handleClick);
+rock.addEventListener("click", handleClick);
+scissors.addEventListener("click", handleClick);
 
 console.log(computerWins);
 console.log(playerWins);
+
