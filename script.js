@@ -9,54 +9,56 @@ const computer = computerChoice();
 const playerChoice = "scissors";
 let computerWins = 0;
 let playerWins = 0;
-
 const playGame = (computer, playerChoice) => {
   if (playerChoice == computer) {
     return "Its a Draw!";
   } else if (playerChoice == "rock") {
     if (computer == "paper") {
-      computerWins++
+      computerWins++;
       return "Paper beats Rock sorry :(";
     } else if (computer == "scissors") {
-      playerWins++
+      playerWins++;
       return "Rock beats scissors :)";
     }
   } else if (playerChoice == "scissors") {
     if (computer == "paper") {
-      playerWins++
+      playerWins++;
       return "Scissors beats paper :)";
     } else if (computer == "rock") {
-      computerWins++
+      computerWins++;
       return "Rock beats scissors :(";
     }
   } else if (playerChoice == "paper") {
     if (computer == "rock") {
-      playerWins++
+      playerWins++;
       return "Paper beats rock :)";
     } else if (computer == "scissors") {
-      computerWins++
+      computerWins++;
       return "Scissors beats paper :(";
     }
   } else {
-    return 'Error try again'
+    return "Error try again";
   }
 };
 
-const game = () => {
-  for(let i = 0; i< 5 ; i++){
-    const playerChoice = prompt('Choose between: Rock, Paper and Scissors').toLowerCase()
+/*const game = () => {
+  for (let i = 0; i < 5; i++) {
+    const playerChoice = prompt(
+      "Choose between: Rock, Paper and Scissors"
+    ).toLowerCase();
     const computerSelection = computerChoice();
     console.log(playGame(computerSelection, playerChoice));
   }
-  if(playerWins < computerWins){
-    return 'You lost!'
-  } else if(playerWins > computerWins){
-   return 'You Won!'
+  if (playerWins < computerWins) {
+    return "You lost!";
+  } else if (playerWins > computerWins) {
+    return "You Won!";
   } else {
-    return 'It was a draw!'
+    return "It was a draw!";
   }
-}
+};
+*/
 
-console.log(game());
+
 console.log(computerWins);
-console.log(playerWins)
+console.log(playerWins);
