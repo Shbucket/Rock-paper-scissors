@@ -1,7 +1,7 @@
 const choices = ["paper", "scissors", "rock"];
 const computerChoice = () => {
-  let pick = choices[Math.floor(Math.random() * 3)];
-  return pick;
+  let pick = choices[Math.floor(Math.random() * choices.length)];
+  computerDisplay.innerHTML = pick;
 };
 
 const computer = computerChoice();
@@ -9,7 +9,7 @@ const computer = computerChoice();
 let playerChoice;
 let computerWins = 0;
 let playerWins = 0;
-const playGame = (computer, playerChoice) => {
+/*const playGame = (computer, playerChoice) => {
   if (playerChoice == computer) {
     return "Its a Draw!";
   } else if (playerChoice == "rock") {
@@ -40,19 +40,22 @@ const playGame = (computer, playerChoice) => {
     return "Error try again";
   }
 };
+*/
 
 const paper = document.getElementById("paper");
 const rock = document.getElementById("rock");
 const scissors = document.getElementById("scissors");
+const userDisplay = document.getElementById("userChoice");
+const computerDisplay = document.getElementById("computerPick");
+const result = document.getElementById("Winner");
 
 const handleClick = (e) => {
-  playerChoice = e.target.id
+  playerChoice = e.target.id;
+  userDisplay.innerHTML = playerChoice;
+  
 };
 
-paper.addEventListener('click', handleClick);
+paper.addEventListener("click", handleClick);
 rock.addEventListener("click", handleClick);
 scissors.addEventListener("click", handleClick);
-
-console.log(computerWins);
-console.log(playerWins);
 
