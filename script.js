@@ -4,6 +4,8 @@ const scissors = document.getElementById("scissors");
 const userDisplay = document.getElementById("userChoice");
 const computerDisplay = document.getElementById("computerPick");
 const result = document.getElementById("Winner");
+const computerVic = document.getElementById("computerW");
+const playerVic = document.getElementById("userW");
 
 let computer;
 let playerChoice;
@@ -19,33 +21,34 @@ const computerChoice = () => {
 
 const playGame = (computer, playerChoice) => {
   if (playerChoice == computer) {
-    result.innerHTML = "Its a Draw!";
+    return 'It was a draw'
   } else if (playerChoice == "rock") {
     if (computer == "paper") {
       computerWins++;
-      result.innerHTML = "Paper beats Rock sorry :(";
+      computerVic.innerHTML = computerWins + ' games';
+    
     } else if (computer == "scissors") {
       playerWins++;
-      result.innerHTML = "Rock beats scissors :)";
+      playerVic.innerHTML = playerWins + " games";
     }
   } else if (playerChoice == "scissors") {
     if (computer == "paper") {
       playerWins++;
-      result.innerHTML = "Scissors beats paper :)";
+    playerVic.innerHTML = playerWins + " games";
     } else if (computer == "rock") {
       computerWins++;
-      result.innerHTML = "Rock beats scissors :(";
+    computerVic.innerHTML = computerWins + " games";
     }
   } else if (playerChoice == "paper") {
     if (computer == "rock") {
       playerWins++;
-      result.innerHTML = "Paper beats rock :)";
+      playerVic.innerHTML = playerWins + " games";
     } else if (computer == "scissors") {
       computerWins++;
-      result.innerHTML = "Scissors beats paper :(";
+      computerVic.innerHTML = computerWins + " games";
     }
   } else {
-    result.innerHTML = "Error try again";
+    return "Error try again";
   }
 };
 
@@ -54,8 +57,17 @@ const handleClick = (e) => {
   userDisplay.innerHTML = playerChoice;
   computerChoice();
   playGame(computer, playerChoice);
+  winner()
 };
 
 paper.addEventListener("click", handleClick);
 rock.addEventListener("click", handleClick);
 scissors.addEventListener("click", handleClick);
+
+const winner = () => {
+  if (computerWins == 5){
+    result.innerHTML = 'The computer won sorry :('
+  } else if (playerWins == 5 ){
+    result.innerHTML = 'You beat the computer :)'
+  }
+}
