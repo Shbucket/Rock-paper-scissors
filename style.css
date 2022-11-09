@@ -1,7 +1,15 @@
-body{
-    background-color: grey;
+body {
+  background-color: grey;
 }
 
-input{
-    margin: 10px;
+input {
+  margin: 10px;
+}
+p {
+  font-weight: bold;
+  font-size: 25px;
+}
+span {
+  font-size: 35px;
+  background-color: white;
 }

@@ -67,7 +67,9 @@ scissors.addEventListener("click", handleClick);
 const winner = () => {
   if (computerWins == 5){
     result.innerHTML = 'The computer won sorry :('
+   
   } else if (playerWins == 5 ){
-    result.innerHTML = 'You beat the computer :)'
+    result.innerHTML = 'You beat the computer :)'  
+
   }
 }
